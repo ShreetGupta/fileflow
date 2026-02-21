@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FileFlow - Smart File Converter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">FileFlow</div>
+  <button class="icon-btn" onclick="toggleTheme()">
+    <span class="material-symbols-outlined">dark_mode</span>
+  </button>
+</header>
+
+<section class="hero">
+  <h1>Convert & Compress Files Instantly</h1>
+  <p>Fast. Modern. Reliable.</p>
+</section>
+
+<main class="container">
+
+  <!-- IMAGE -->
+  <section class="card">
+    <h2>Image Converter</h2>
+    <div class="drop-zone" id="imageDrop">
+      Drag & Drop Images Here
+      <input type="file" id="imageFiles" multiple hidden>
+    </div>
+
+    <div class="controls">
+      <label>Quality</label>
+      <input type="range" id="imageQuality" min="10" max="100" value="70">
+      <select id="imageFormat">
+        <option value="jpeg">JPG</option>
+        <option value="png">PNG</option>
+        <option value="webp">WEBP</option>
+      </select>
+    </div>
+
+    <button class="primary-btn" onclick="uploadImages()">Process Images</button>
+    <div id="imagePreview" class="preview"></div>
+    <div id="imageResult" class="result"></div>
+  </section>
+
+  <!-- PDF -->
+  <section class="card">
+    <h2>PDF Compression</h2>
+    <input type="file" id="pdfFiles" multiple>
+    <button class="primary-btn" onclick="uploadPDF()">Compress PDF</button>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="card">
+    <h2>Video Converter</h2>
+    <input type="file" id="videoFiles" multiple>
+
+    <div class="controls">
+      <label>Compression Level</label>
+      <input type="range" id="videoCrf" min="18" max="35" value="28">
+      <select id="videoFormat">
+        <option value="mp4">MP4</option>
+        <option value="avi">AVI</option>
+      </select>
+    </div>
+
+    <progress id="videoProgress" value="0" max="100"></progress>
+    <button class="primary-btn" onclick="uploadVideo()">Convert Video</button>
+  </section>
+
+</main>
+
+<div id="snackbar"></div>
+<div id="loader" class="loader-overlay">
+  <div class="spinner"></div>
+</div>
+
+<footer>
+  © 2026 FileFlow • College Mini Project
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

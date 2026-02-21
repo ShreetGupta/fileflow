@@ -1,0 +1,169 @@
+:root {
+  --primary: #6750A4;
+  --background: #f6f6f8;
+  --surface: #ffffff;
+  --text: #1c1b1f;
+  --radius: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+/* Topbar */
+.topbar {
+  background: var(--primary);
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+}
+
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  gap: 30px;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Buttons */
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Drop zone */
+.drop-zone {
+  border: 2px dashed var(--primary);
+  padding: 40px;
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.drop-zone.dragover {
+  background: rgba(103,80,164,0.1);
+}
+
+/* Controls */
+input, select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Preview */
+.preview img {
+  width: 80px;
+  margin: 5px;
+  border-radius: 12px;
+}
+
+/* Result */
+.result p {
+  background: #e8def8;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Snackbar */
+#snackbar {
+  visibility: hidden;
+  background: #323232;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#snackbar.show {
+  visibility: visible;
+}
+
+/* Loader */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #fff;
+  border-top: 6px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark Mode */
+.dark {
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text: #ffffff;
+}
